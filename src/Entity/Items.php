@@ -20,17 +20,17 @@ class Items
     private $id;
 
     /**
-     * @ORM\OneToMany(targetEntity=product::class, mappedBy="items")
+     * @ORM\OneToMany(targetEntity=Product::class, mappedBy="items")
      */
     private $produit_id;
 
     /**
-     * @ORM\OneToMany(targetEntity=panier::class, mappedBy="items")
+     * @ORM\OneToMany(targetEntity=Panier::class, mappedBy="items")
      */
     private $panier_id;
 
     /**
-     * @ORM\OneToMany(targetEntity=order::class, mappedBy="items")
+     * @ORM\OneToMany(targetEntity=Order::class, mappedBy="items")
      */
     private $order_id;
 
@@ -47,14 +47,14 @@ class Items
     }
 
     /**
-     * @return Collection|product[]
+     * @return Collection|Product[]
      */
     public function getProduitId(): Collection
     {
         return $this->produit_id;
     }
 
-    public function addProduitId(product $produitId): self
+    public function addProduitId(Product $produitId): self
     {
         if (!$this->produit_id->contains($produitId)) {
             $this->produit_id[] = $produitId;
@@ -64,7 +64,7 @@ class Items
         return $this;
     }
 
-    public function removeProduitId(product $produitId): self
+    public function removeProduitId(Product $produitId): self
     {
         if ($this->produit_id->removeElement($produitId)) {
             // set the owning side to null (unless already changed)
@@ -77,14 +77,14 @@ class Items
     }
 
     /**
-     * @return Collection|panier[]
+     * @return Collection|Panier[]
      */
     public function getPanierId(): Collection
     {
         return $this->panier_id;
     }
 
-    public function addPanierId(panier $panierId): self
+    public function addPanierId(Panier $panierId): self
     {
         if (!$this->panier_id->contains($panierId)) {
             $this->panier_id[] = $panierId;
@@ -94,7 +94,7 @@ class Items
         return $this;
     }
 
-    public function removePanierId(panier $panierId): self
+    public function removePanierId(Panier $panierId): self
     {
         if ($this->panier_id->removeElement($panierId)) {
             // set the owning side to null (unless already changed)
@@ -107,14 +107,14 @@ class Items
     }
 
     /**
-     * @return Collection|order[]
+     * @return Collection|Order[]
      */
     public function getOrderId(): Collection
     {
         return $this->order_id;
     }
 
-    public function addOrderId(order $orderId): self
+    public function addOrderId(Order $orderId): self
     {
         if (!$this->order_id->contains($orderId)) {
             $this->order_id[] = $orderId;
@@ -124,7 +124,7 @@ class Items
         return $this;
     }
 
-    public function removeOrderId(order $orderId): self
+    public function removeOrderId(Order $orderId): self
     {
         if ($this->order_id->removeElement($orderId)) {
             // set the owning side to null (unless already changed)

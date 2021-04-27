@@ -20,7 +20,7 @@ class Files
     private $id;
 
     /**
-     * @ORM\OneToMany(targetEntity=product::class, mappedBy="files")
+     * @ORM\OneToMany(targetEntity=Product::class, mappedBy="files")
      */
     private $produit_id;
 
@@ -40,14 +40,14 @@ class Files
     }
 
     /**
-     * @return Collection|product[]
+     * @return Collection|Product[]
      */
     public function getProduitId(): Collection
     {
         return $this->produit_id;
     }
 
-    public function addProduitId(product $produitId): self
+    public function addProduitId(Product $produitId): self
     {
         if (!$this->produit_id->contains($produitId)) {
             $this->produit_id[] = $produitId;
@@ -57,7 +57,7 @@ class Files
         return $this;
     }
 
-    public function removeProduitId(product $produitId): self
+    public function removeProduitId(Product $produitId): self
     {
         if ($this->produit_id->removeElement($produitId)) {
             // set the owning side to null (unless already changed)
