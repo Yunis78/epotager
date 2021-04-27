@@ -47,14 +47,14 @@ class Items
     }
 
     /**
-     * @return Collection|product[]
+     * @return Collection|Product[]
      */
     public function getProduitId(): Collection
     {
         return $this->produit_id;
     }
 
-    public function addProduitId(product $produitId): self
+    public function addProduitId(Product $produitId): self
     {
         if (!$this->produit_id->contains($produitId)) {
             $this->produit_id[] = $produitId;
@@ -64,7 +64,7 @@ class Items
         return $this;
     }
 
-    public function removeProduitId(product $produitId): self
+    public function removeProduitId(Product $produitId): self
     {
         if ($this->produit_id->removeElement($produitId)) {
             // set the owning side to null (unless already changed)
